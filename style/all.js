@@ -100,12 +100,11 @@ function delone(e){
 function delall(item){
     if (item.target.nodeName !== 'INPUT') {return};
     delAll.classList.add('d-none');
-    list.innerHTML='<h3>目前還沒有您的資料,請點選上方計算你的BMI</h3>';
     let len = datalist.length;
     datalist.splice(0,len);
     localStorage.setItem('bmilist',JSON.stringify(datalist));
     updateList(datalist);
-
+    list.innerHTML='<h3>目前還沒有您的資料,請點選上方計算你的BMI</h3>';
     // 要問六角老師為何用clear之後新增新資料會連之前已刪除的資料一起增加
     // localStorage.clear();
     // updateList(datalist);
