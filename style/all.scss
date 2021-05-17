@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+html{
+    min-height: 100%;
+    position: relative;
+}
+body{
+    height: 100vh;
+}
+    // tool
+    .d-none{
+        display: none;
+    }
+    .d-flex{
+        display: flex;
+    }
+    .color-g{
+        color: #86D73F;
+    }
+    .bg-g{
+        background-color: #86D73F;
+    }
+    .color-b{
+        color:#31BAF9;
+    }
+    .bg-b{
+        background-color: #31BAF9;
+    }
+    .color-y{
+        color: #FF982D;
+    }
+    .bg-y{
+        background-color: #FF982D;
+    }
+    .t-center{
+        text-align: center;
+    }
+    // tool end
+   .wraper{
+       position: relative;
+       min-height: 100%;
+  
+.header{
+
+    max-width:100%;
+    padding: 75px 215px 75px 215px;
+    background: #424242;
+    color: #FFD366 100%;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    .img{
+      background:no-repeat url(/assets/BMICLogo.png);
+      width: 120px;
+      height: 120px;
+      margin-top: 20px;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        label{
+            color: #FFD366;
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+        input{
+            width: 250px;
+            height: 40px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.18);
+            border: 2px solid #FFD366;
+            border-radius: 30px;
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        .warning{
+            color: red;
+            font-size: 18px;
+            position: absolute;
+            bottom: -30px;
+            left: 29px;
+        }
+    }
+    .btn{
+      margin-top: 20px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: none;
+        background: #FFD366;
+        font-size: 24px;
+        text-align: center;
+        transition: all .5s;
+    }
+    .btn:hover{
+        background: #b99e5a;
+        cursor: pointer;
+        }
+     // 測驗結果的css
+    .btnanswer{
+        width: 120px;
+        height: 120px;
+        margin-top: 20px;
+        border-radius: 50%;
+        background: none;
+        border: 6px solid ;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        em{
+            font-size: 32px;
+        }
+        p{
+            font-size: 18px;
+        }
+        a{
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a:hover {
+            transform: rotate(-90deg);
+            transition: all .5s;
+        }
+        h3{
+            position: absolute;
+            right: -60px;
+        }
+    }
+    //end
+}
+.main{
+        padding:40px 0 100px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    h2{
+        margin-bottom: 50px;
+    }
+    .list{
+        padding: 20px 200px;
+        li{
+            margin-bottom: 15px;
+            background: rgb(228, 227, 227);
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            p{
+                font-size: 20px;
+                    span{
+                        font-size: 16px;
+                        margin-right: 15px;
+                    }
+            }
+        }
+        
+    }
+    .btn-alldel{
+        margin: 35px auto 5px;
+        padding: 10px;
+        width: 100px;
+    }
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 0 ;
+    // margin-top: 100px;
+    background: #FFD366 10%;
+    display: flex;
+    justify-content: center;
+    .ft-img{
+        margin: 0 auto;
+        width: 55px;
+        height: 55px;
+    }
+    }
+} 
