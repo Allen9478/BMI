@@ -36,10 +36,10 @@ if(height.value>0 && weight.value>0){
         bmiColor='#FF982D';
         btn.classList.add('d-none');
         spanWarning.classList.add('d-none');
-    }else if(height.value == '' || weight.value == '' ){
+    }else if(height.value === '' || weight.value === '' ){
         spanWarning.classList.remove('d-none');
         return;
-    }else if(height.value == 0 || weight.value == 0){
+    }else if(height.value === 0 || weight.value === 0){
         spanWarning.classList.remove('d-none');
         return;
     }
@@ -63,8 +63,6 @@ if(height.value>0 && weight.value>0){
         localStorage.setItem('bmilist',JSON.stringify(datalist));
         var back = document.querySelector('.back');
         back.addEventListener('click', function newbmi(n){ 
-            var btnA = document.querySelector('.btnanswer');
-            var text = document.querySelector('.text');
             btnGroup.classList.add('d-none'); 
             btn.classList.remove('d-none');
             height.readOnly=false;
@@ -81,7 +79,15 @@ function updateList(e) {
     str = '';
     var len = e.length;
     for (var i = 0; len > i; i++) {
-      str += '<li style="border-left:6px solid '+e[i].color +'"><p>'+e[i].range +'</p><p><span>BMI</span>'+e[i].bmi +'</p><p><span>weight</span>'+e[i].weight +'kg</p><p><span>height</span>'+e[i].height +'cm</p><p>'+e[i].date+'</p><button id="delSelf" data-self='+i+'>刪除</button></li>';
+      str +='<li style="border-left:6px solid '+e[i].color +'">\
+                <p>'+e[i].range +'</p>\
+                <p><span>BMI</span>'+e[i].bmi +'</p>\
+                <p><span>weight</span>'+e[i].weight +'kg</p>\
+                <p><span>height</span>'+e[i].height +'cm</p>\
+                <p>'+e[i].date+'</p>\
+                <button id="delSelf" data-self='+i+'>刪除</button>\
+             </li>';
+
     }
     list.innerHTML = str;
 }
@@ -90,7 +96,7 @@ function delone(e){
     
     var cel = e.target.dataset.self;
     datalist.splice(cel,1);
-    if(datalist.length == 0){
+    if(datalist.length === 0){
         listText.classList.remove('d-none');
         delAll.classList.add('d-none');
     };
