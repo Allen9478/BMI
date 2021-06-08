@@ -1,22 +1,22 @@
-var datalist = JSON.parse(localStorage.getItem('bmiList')) || [];
-var btn = document.querySelector('.btn');
-var height = document.getElementById('textheight');
-var weight = document.getElementById('textweight');
-var delself = document.getElementById('delSelf');
-var delAll = document.getElementById('delAll');
-var main = document.querySelector('.main');
-var list = document.querySelector('.list');
-var listText = document.querySelector('.main h3');
+let datalist = JSON.parse(localStorage.getItem('bmiList')) || [];
+let btn = document.querySelector('.btn');
+let height = document.getElementById('textheight');
+let weight = document.getElementById('textweight');
+let delself = document.getElementById('delSelf');
+let delAll = document.getElementById('delAll');
+let main = document.querySelector('.main');
+let list = document.querySelector('.list');
+let listText = document.querySelector('.main h3');
 btn.addEventListener('click',answer);
 list.addEventListener('click',delone);
 delAll.addEventListener('click',delall);
 updateList(datalist);
 
 function answer(e){
-    var bmiValue = (weight.value/(height.value*0.01)**2).toFixed(2);
+    let bmiValue = (weight.value/(height.value*0.01)**2).toFixed(2);
     //toFixed(x)是取小數後第x為止的用法
-    var spanWarning = document.querySelector('.warning');
-    var btnGroup = document.querySelector('.btn-another');  
+    let spanWarning = document.querySelector('.warning');
+    let btnGroup = document.querySelector('.btn-another');  
 if(height.value>0 && weight.value>0){
     if((bmiValue<18.5 && bmiValue>0)){
         bmiRange='過輕';
@@ -43,12 +43,12 @@ if(height.value>0 && weight.value>0){
         spanWarning.classList.remove('d-none');
         return;
     }
-        var str ='<div style="color:'+bmiColor+'" class="btnanswer"><em>' + bmiValue + '</em><p>BMI</p><h3>' + bmiRange + '</h3><a class="back ' + bmiBg + '" href="#"><img src="assets/icons_loop.png"></a></div>';
+        let str ='<div style="color:'+bmiColor+'" class="btnanswer"><em>' + bmiValue + '</em><p>BMI</p><h3>' + bmiRange + '</h3><a class="back ' + bmiBg + '" href="#"><img src="assets/icons_loop.png"></a></div>';
         btnGroup.innerHTML= str;
         btnGroup.classList.remove('d-none');
         height.readOnly=true;
         weight.readOnly=true;
-        var infor ={
+        let infor ={
             range : bmiRange,
             bmi : bmiValue,
             height :height.value,
@@ -61,7 +61,7 @@ if(height.value>0 && weight.value>0){
         datalist.push(infor);
         updateList(datalist);
         localStorage.setItem('bmilist',JSON.stringify(datalist));
-        var back = document.querySelector('.back');
+        let back = document.querySelector('.back');
         back.addEventListener('click', function newbmi(n){ 
             btnGroup.classList.add('d-none'); 
             btn.classList.remove('d-none');
@@ -77,8 +77,8 @@ if(height.value>0 && weight.value>0){
 }
 function updateList(e) {
     str = '';
-    var len = e.length;
-    for (var i = 0; len > i; i++) {
+    let len = e.length;
+    for (let i = 0; len > i; i++) {
       str +='<li style="border-left:6px solid '+e[i].color +'">\
                 <p>'+e[i].range +'</p>\
                 <p><span>BMI</span>'+e[i].bmi +'</p>\
@@ -94,7 +94,7 @@ function updateList(e) {
 function delone(e){
     if (e.target.nodeName !== 'BUTTON') {return};
     
-    var cel = e.target.dataset.self;
+    let cel = e.target.dataset.self;
     datalist.splice(cel,1);
     if(datalist.length === 0){
         listText.classList.remove('d-none');
